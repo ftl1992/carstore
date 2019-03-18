@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="main.java.com.fan.carstore.dao.mapper.ModelMapper" >
+
+
+
+<sql id="Model" >
+  	year,model_name,short_name,lead_pic,sell_status,import_tyoe,is_hidden,display_tag
+   </sql>
+   
+   
+   
+   
+<select id="selectByModelname" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.ModelDto" >
+    select  
+    <include refid="Model" />  
+    from tb_model 
+    where model_name =#{model_name}
+
+ </select>
+
+
+<select id="selectByYear" parameterType="java.lang.Integer" resultType="main.java.com.fan.carstore.dao.po.ModelDto" >
+    select  
+    <include refid="Model" />  
+    from tb_model 
+    where year =#{year}
+
+ </select>
+
+
+
+<select id="selectByShortname" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.ModelDto" >
+    select  
+    <include refid="Model" />  
+    from tb_model 
+    where short_name =#{short_name}
+
+ </select>
+
+
+
+
+</mapper>

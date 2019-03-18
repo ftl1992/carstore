@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="main.java.com.fan.carstore.dao.mapper.SeriesMapper" >
+
+
+
+<sql id="Model" >
+  	en_name,series_name,alias_name,image_url,is_import,is_hidden,display_tag
+   </sql>
+   
+   <select id="selectByModelname" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.SeriesDto" >
+    select  
+    <include refid="Series" />  
+    from tb_model 
+    where series_name =#{series_name}
+
+ </select>
+   
+   
+   
+  <select id="selectByEname" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.SeriesDto" >
+    select  
+    <include refid="Series" />  
+    from tb_model 
+    where en_name =#{en_name}
+
+ </select>
+ 
+ 
+ 
+   <select id="selectAname" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.SeriesDto" >
+    select  
+    <include refid="Series" />  
+    from tb_model 
+    where alias_name =#{alias_name}
+
+ </select>
+ 
+ </mapper>

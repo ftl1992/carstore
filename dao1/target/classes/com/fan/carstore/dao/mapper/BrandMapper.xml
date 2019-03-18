@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+ <mapper namespace="main.java.com.fan.carstore.dao.mapper.BrandMapper" >
+  <sql id="Brand" >
+  	en_name,brand_name,country,pinyin,alias_name
+   </sql>
+ 
+ <select id="selectByBrandnameBrand" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.BrandDto" >
+    select  
+    <include refid="Brand" />  
+    from tb_brand 
+    where brand_name =#{brand_name}
+
+ </select>
+  
+  <select id="selectByEname" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.BrandDto" >
+    select 
+    <include refid="Brand" />  
+    from tb_brand 
+    where en_name =#{en_name}
+
+  </select>
+  
+  
+   <select id="selectCountry" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.BrandDto" >
+    select 
+    <include refid="Brand" />  
+    from tb_brand 
+    where country =#{country}
+
+  </select>
+  
+  <select id="selectPinyin" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.BrandDto" >
+    select 
+    <include refid="Brand" />  
+    from tb_brand 
+    where pinyin =#{pinyin}
+
+  </select>
+  
+    <select id="selectAnameBrand" parameterType="java.lang.String" resultType="main.java.com.fan.carstore.dao.po.BrandDto" >
+    select 
+    <include refid="Brand" />  
+    from tb_brand 
+    where alias_name =#{alias_name}
+
+  </select>
+  
+  
+  </mapper>
